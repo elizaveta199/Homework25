@@ -28,6 +28,16 @@ public class ManagerImpl implements Manager {
 
         return store.containsKey(day) ? maxSteps - store.get(day) : maxSteps;
     }
+
+    public int getSumSteps() {
+        int sum = 0;
+
+        for (Map.Entry<Integer, Integer> entry : store.entrySet()) {
+            sum += entry.getValue();
+        }
+
+        return sum;
+    }
 }
 
 
