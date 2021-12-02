@@ -1,4 +1,6 @@
+import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class ManagerImpl implements ManagerI {
     private final Map<Integer, Integer> store;
@@ -61,6 +63,20 @@ public class ManagerImpl implements ManagerI {
             sum += entry.getValue();
         }
         return sum;
+    }
+
+    /**
+     * Который возвращает стрим из всех дней, когда было больше чем steps шагов
+     *
+     * @param steps - шаги
+     * @return
+     */
+
+    public Stream<Integer> getAllAbove(int steps) {
+        return store.entrySet()
+                .stream()
+                .filter(integerIntegerEntry -> integerIntegerEntry.getValue() > steps)
+                .map(Map.Entry::getKey);
     }
 
     /**
