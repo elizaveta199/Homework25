@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class StepBattle {
 
-    private final List<Manager> members;
+    private final List<ManagerI> members;
 
-    public StepBattle(List<Manager> members) {
+    public StepBattle(List<ManagerI> members) {
         this.members = members;
     }
 

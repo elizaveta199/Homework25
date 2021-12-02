@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StepManagerTest {
+public class StepManagerITest {
 
     Map<Integer, Integer> store = new HashMap<>();
     ManagerImpl managerImpl = new ManagerImpl(store);

@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,8 +7,8 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 
 public class StepBattleTestMockito {
-    
-    private List<Manager> managers;
+
+    private List<ManagerI> managers;
 
     @Test
     public void secondManagerShouldWinWhenGetMoreSteps() {
