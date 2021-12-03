@@ -1,3 +1,6 @@
+import exception.IllegalDayException;
+import exception.IllegalStepsException;
+
 import java.util.List;
 
 public class StepBattle {
@@ -8,7 +11,7 @@ public class StepBattle {
         this.members = members;
     }
 
-    public void addSteps(int player, int day, int steps) {
+    public void addSteps(int player, int day, int steps) throws IllegalDayException, IllegalStepsException {
         this.members.get(player).add(day, steps);
     }
 

@@ -1,3 +1,5 @@
+import exception.IllegalDayException;
+import exception.IllegalStepsException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,7 +14,7 @@ public class StepManagerITest {
     ManagerImpl managerImpl = new ManagerImpl(store);
 
     @BeforeEach
-    public void createAddSteps() {
+    public void createAddSteps() throws IllegalStepsException, IllegalDayException {
         managerImpl.add(1, 2000);
         managerImpl.add(1, 3500);
         managerImpl.add(2, 3000);

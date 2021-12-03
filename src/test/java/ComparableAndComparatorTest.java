@@ -1,3 +1,5 @@
+import exception.IllegalDayException;
+import exception.IllegalStepsException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +11,7 @@ public class ComparableAndComparatorTest {
     ManagerImpl[] managers = new ManagerImpl[3];
 
     @BeforeEach
-    public void addManagers() {
+    public void addManagers() throws IllegalStepsException, IllegalDayException {
         ManagerImpl manager1 = new ManagerImpl(new HashMap<>()); //600
         manager1.add(1, 200);
         manager1.add(2, 100);

@@ -1,3 +1,6 @@
+import exception.IllegalDayException;
+import exception.IllegalStepsException;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -16,7 +19,15 @@ public class ManagerImpl implements ManagerI {
      * @param day   - день
      * @param steps - количество пройденных шагов
      */
-    public void add(int day, int steps) {
+    @Override
+    public void add(int day, int steps) throws IllegalDayException, IllegalStepsException {
+        if (day > 365 || day < 1) {
+            throw new IllegalDayException("День не может быть > 365 или < 1");
+        }
+        if (steps < 0) {
+            throw new IllegalStepsException("Шаги не могут быть отрицательными");
+        }
+
         if (store.containsKey(day)) {
             store.put(day, store.get(day) + steps);
         } else {
